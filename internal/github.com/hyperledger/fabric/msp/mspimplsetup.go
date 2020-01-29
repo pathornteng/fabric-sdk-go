@@ -252,7 +252,7 @@ func (msp *bccspmsp) finalizeSetupCAs() error {
 }
 
 func (msp *bccspmsp) setupNodeOUs(config *m.FabricMSPConfig) error {
-	if config.FabricNodeOus != nil {
+	if config.FabricNodeOus != nil && config.FabricNodeOus.GetEnable() {
 
 		msp.ouEnforcement = config.FabricNodeOus.Enable
 
